@@ -11,6 +11,9 @@ class CPUPlayer:
             if self.card.is_empty():
                 self.is_winner = True
 
+    def __eq__(self, other):
+        return self.number == other.number
+
 
 class HumanPlayer(CPUPlayer):
 
@@ -26,6 +29,9 @@ class HumanPlayer(CPUPlayer):
         else:
             if number in self.card:
                 self.is_winner = False
+
+    def __eq__(self, other):
+        return self.number == other.number
 
 
 def create_player(name, player_type, card):
