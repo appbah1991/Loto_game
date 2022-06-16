@@ -25,3 +25,6 @@ class Bag:
         else:
             self._numbers.remove(result)
             return result
+
+    def __eq__(self, other):
+        return self.number == other.number

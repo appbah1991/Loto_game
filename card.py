@@ -20,6 +20,8 @@ class CardNotContainsNumberError(ValueError):
     def __str__(self):
         return f'В карточке нет числа {self.number}'
 
+    def __eq__(self, other):
+        return self.number == other.number
 
 class Card:
 
@@ -60,3 +62,6 @@ class Card:
             raise CardNotContainsNumberError(number)
         else:
             self.numbers[index].is_cross_out = True
+
+    def __eq__(self, other):
+        return self.number == other.number
